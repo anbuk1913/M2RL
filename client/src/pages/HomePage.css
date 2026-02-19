@@ -1,0 +1,252 @@
+/* ===== HOMEPAGE CSS ===== */
+
+/* Hero */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #060d1a 0%, #0a1628 40%, #0d2040 70%, #0a1628 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero__bg-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: float 8s ease-in-out infinite;
+}
+
+.hero__bg-orb--1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 102, 255, 0.3), transparent);
+    top: -100px;
+    right: -50px;
+    animation-delay: 0s;
+}
+
+.hero__bg-orb--2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 153, 51, 0.2), transparent);
+    bottom: 100px;
+    left: -100px;
+    animation-delay: -3s;
+}
+
+.hero__bg-orb--3 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(19, 136, 8, 0.15), transparent);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: -6s;
+}
+
+.hero__content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    padding: 40px 24px 60px;
+}
+
+.hero__badges {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    animation: fadeInUp 0.6s ease;
+}
+
+.hero__logo-wrap {
+    margin-bottom: 24px;
+    animation: fadeInUp 0.7s ease 0.1s both;
+}
+
+.hero__logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 3px solid rgba(0, 102, 255, 0.5);
+    box-shadow: 0 0 40px rgba(0, 102, 255, 0.3), 0 0 80px rgba(0, 102, 255, 0.1);
+}
+
+.hero__title {
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 16px;
+    animation: fadeInUp 0.8s ease 0.2s both;
+    letter-spacing: -1px;
+}
+
+.hero__title-accent {
+    background: linear-gradient(90deg, #0066ff, #ff9933, #0066ff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s linear infinite;
+}
+
+.hero__tagline {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 16px;
+    font-weight: 500;
+    animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.hero__desc {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 600px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero__actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease 0.5s both;
+}
+
+.hero__scroll-hint {
+    margin-top: 48px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.3);
+    animation: pulse 3s ease-in-out infinite;
+    letter-spacing: 1px;
+}
+
+/* About Snap */
+.about-snap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-snap__card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Solutions Cards */
+.solutions-card {
+    text-align: center;
+    padding: 32px 24px;
+    cursor: default;
+}
+
+.solutions-card__icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.solutions-card__title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.solutions-card__desc {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+}
+
+/* Why Cards */
+.why-card {
+    text-align: center;
+    padding: 32px 20px;
+}
+
+.why-card__icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.why-card__title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.why-card__desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Social Cards */
+.social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.social-card:hover {
+    transform: translateY(-6px);
+}
+
+.social-card__icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.social-card__label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* Quick Form */
+.quick-form {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 32px;
+}
+
+@media (max-width: 768px) {
+    .about-snap {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .hero__logo {
+        width: 80px;
+        height: 80px;
+    }
+}
