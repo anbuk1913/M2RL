@@ -4,24 +4,35 @@ const cors = require('cors');
 const contactRoute = require('./routes/contact');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
-// Middleware
+const PORT = process.env.PORT;
+const HOST = process.env.SERVER_HOST;
+
+const allowedOrigins = process.env.CLIENT_ORIGINS
+  ? process.env.CLIENT_ORIGINS.split(',').map(origin => origin.trim())
+  : [];
+
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3000'],
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
 app.use('/api/contact', contactRoute);
 
-// Health check
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'M²RL TechnologieS API is running 🚀' });
+app.get('/', (req, res) => {
+  res.send('Oops! You Found Our Backend Server');
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 M²RL Server running on http://localhost:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`🚀 Server running on http://${HOST}:${PORT}`);
 });
