@@ -1,172 +1,145 @@
 import { Link } from 'react-router-dom';
+import {
+    Building2, Mail, MapPin, Phone,
+    Youtube, Facebook, Instagram, Linkedin,
+    ShieldCheck, Rocket, ExternalLink
+} from 'lucide-react';
 
-const socialLinks = [
-    { icon: '▶', label: 'YouTube', href: 'https://www.youtube.com/@M2RLTechnologieS', color: '#ff0000' },
-    { icon: 'f', label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61584367014521', color: '#1877f2' },
-    { icon: '📸', label: 'Instagram', href: 'https://www.instagram.com/mrl_technologies_/', color: '#e1306c' },
-    { icon: 'in', label: 'LinkedIn', href: 'https://www.linkedin.com/in/m²rl-t-bbb405290', color: '#0a66c2' },
-];
-
-const quickLinks = [
+const navLinks = [
     { label: 'Home', path: '/' },
-    { label: 'About Us', path: '/about' },
+    { label: 'About', path: '/about' },
     { label: 'Products', path: '/products' },
-    { label: 'Contact', path: '/contact' },
     { label: 'R&D Division', path: '/rnd' },
     { label: 'Investor Info', path: '/investor' },
     { label: 'Careers', path: '/careers' },
+    { label: 'Contact', path: '/contact' },
+];
+
+const legalLinks = [
+    { label: 'Privacy Policy', path: '/privacy' },
+    { label: 'Terms & Conditions', path: '/terms' },
+];
+
+const socials = [
+    { Icon: Youtube, label: 'YouTube', href: 'https://www.youtube.com/@M2RLTechnologieS', color: '#ff0000', bg: 'rgba(255,0,0,0.1)' },
+    { Icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61584367014521', color: '#1877f2', bg: 'rgba(24,119,242,0.1)' },
+    { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/mrl_technologies_/', color: '#e1306c', bg: 'rgba(225,48,108,0.1)' },
+    { Icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/m²rl-t-bbb405290', color: '#0a66c2', bg: 'rgba(10,102,194,0.1)' },
 ];
 
 export default function Footer() {
     return (
-        <footer style={{
-            background: 'linear-gradient(180deg, #060d1a 0%, #040a15 100%)',
-            color: '#fff',
-            paddingTop: '64px',
-            paddingBottom: '0',
-        }}>
-            {/* Tricolor Top Stripe */}
-            <div style={{
-                height: '4px',
-                background: 'linear-gradient(90deg, #ff9933 33.33%, #fff 33.33%, #fff 66.66%, #138808 66.66%)',
-                marginBottom: '48px'
-            }} />
+        <footer style={{ background: 'linear-gradient(180deg,#040e20 0%,#020b18 100%)', color: '#fff', position: 'relative', overflow: 'hidden' }}>
+            {/* Top glow line */}
+            <div style={{ height: 1, background: 'linear-gradient(90deg,transparent,rgba(26,111,255,0.4),rgba(249,115,22,0.3),transparent)' }} />
 
-            <div className="container">
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '40px', paddingBottom: '48px' }}>
+            {/* Background mesh */}
+            <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(ellipse at 20% 0%, rgba(26,111,255,0.07) 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, rgba(249,115,22,0.05) 0%, transparent 50%)' }} />
 
-                    {/* Brand Column */}
-                    <div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                            <img
-                                src="/logo.jpeg"
-                                alt="M²RL Logo"
-                                style={{ width: '48px', height: '48px', borderRadius: '10px', objectFit: 'cover', border: '2px solid rgba(0,102,255,0.4)' }}
-                            />
+            <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: 64, paddingBottom: 32 }}>
+
+                {/* Main Grid */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '48px 40px', marginBottom: 56 }}>
+
+                    {/* Brand */}
+                    <div style={{ gridColumn: 'span 1' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 18 }}>
+                            <img src="/logo.jpeg" alt="M²RL" style={{ width: 44, height: 44, borderRadius: 10, border: '1.5px solid rgba(26,111,255,0.4)', boxShadow: '0 0 16px rgba(26,111,255,0.25)' }} />
                             <div>
-                                <div style={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: '16px', lineHeight: 1.2 }}>M²RL TechnologieS</div>
-                                <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.5px' }}>Smart Sensor Innovation</div>
+                                <div style={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: '15px', lineHeight: 1.2 }}>M²RL TechnologieS</div>
+                                <div style={{ fontSize: '10.5px', color: 'rgba(255,255,255,0.38)', letterSpacing: '0.3px' }}>Smart Sensor Innovation</div>
                             </div>
                         </div>
-                        <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, marginBottom: '20px' }}>
-                            Emerging sensor manufacturing & R&D startup based in Tamil Nadu, India. Smart & Affordable Sensor Innovation – Made in India 🇮🇳
+                        <p style={{ fontSize: '13.5px', color: 'rgba(255,255,255,0.48)', lineHeight: 1.8, marginBottom: 20 }}>
+                            An emerging sensor manufacturing & R&D startup from Tamil Nadu, building affordable and reliable sensor solutions for India's future.
                         </p>
-
-                        {/* MSME Badges */}
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '20px' }}>
-                            <span style={{ padding: '4px 12px', borderRadius: '20px', fontSize: '11px', fontWeight: 600, background: 'rgba(255,153,51,0.15)', color: '#ff9933', border: '1px solid rgba(255,153,51,0.3)' }}>
-                                🏭 MSME Registered
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                            <span className="badge badge-saffron" style={{ alignSelf: 'flex-start', fontSize: '11px' }}>
+                                <Building2 size={11} /> MSME Registered
                             </span>
-                            <span style={{ padding: '4px 12px', borderRadius: '20px', fontSize: '11px', fontWeight: 600, background: 'rgba(19,136,8,0.15)', color: '#4caf50', border: '1px solid rgba(19,136,8,0.3)' }}>
-                                🚀 Startup India
+                            <span className="badge badge-green" style={{ alignSelf: 'flex-start', fontSize: '11px' }}>
+                                <Rocket size={11} /> Startup India
                             </span>
-                        </div>
-
-                        {/* Social */}
-                        <div style={{ display: 'flex', gap: '10px' }}>
-                            {socialLinks.map(({ icon, label, href }) => (
-                                <a
-                                    key={label}
-                                    href={href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    title={label}
-                                    className="social-link"
-                                    style={{ color: '#fff', fontSize: '13px', fontWeight: 700 }}
-                                >
-                                    {icon}
-                                </a>
-                            ))}
+                            <span className="badge badge-blue" style={{ alignSelf: 'flex-start', fontSize: '11px' }}>
+                                <ShieldCheck size={11} /> Made in India
+                            </span>
                         </div>
                     </div>
 
-                    {/* Quick Links */}
+                    {/* Navigation */}
                     <div>
-                        <h4 style={{ fontFamily: 'Poppins', fontSize: '16px', fontWeight: 700, marginBottom: '20px', color: '#fff' }}>
-                            Quick Links
-                        </h4>
-                        <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                            {quickLinks.map(({ label, path }) => (
+                        <h4 style={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'rgba(255,255,255,0.35)', marginBottom: 18 }}>Quick Links</h4>
+                        <ul style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                            {navLinks.map(({ label, path }) => (
                                 <li key={path}>
-                                    <Link
-                                        to={path}
-                                        style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', transition: 'color 0.2s' }}
-                                        onMouseEnter={e => e.target.style.color = '#0066ff'}
-                                        onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.6)'}
+                                    <Link to={path} style={{ fontSize: '14px', color: 'rgba(255,255,255,0.62)', display: 'flex', alignItems: 'center', gap: 6, transition: 'color 0.2s', paddingBottom: 1 }}
+                                        onMouseEnter={e => e.target.style.color = '#fff'}
+                                        onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.62)'}
                                     >
-                                        → {label}
+                                        {label}
                                     </Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
 
-                    {/* Core Areas */}
-                    <div>
-                        <h4 style={{ fontFamily: 'Poppins', fontSize: '16px', fontWeight: 700, marginBottom: '20px', color: '#fff' }}>
-                            Core Solutions
-                        </h4>
-                        <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                            {['🌾 Agricultural Sensors', '🏭 Industrial Automation', '🤖 Robotics & Embedded', '📡 IoT Monitoring', '🛰 Drone Data Integration'].map(item => (
-                                <li key={item} style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)' }}>{item}</li>
-                            ))}
-                        </ul>
-                    </div>
-
                     {/* Contact */}
                     <div>
-                        <h4 style={{ fontFamily: 'Poppins', fontSize: '16px', fontWeight: 700, marginBottom: '20px', color: '#fff' }}>
-                            Contact Info
-                        </h4>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                            <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                                <span style={{ fontSize: '16px' }}>📧</span>
-                                <div>
-                                    <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', marginBottom: '2px' }}>Email</div>
-                                    <a href="mailto:mrltechnologies408@gmail.com" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)' }}>
-                                        mrltechnologies408@gmail.com
-                                    </a>
-                                </div>
-                            </div>
-                            <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                                <span style={{ fontSize: '16px' }}>📍</span>
-                                <div>
-                                    <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', marginBottom: '2px' }}>Location</div>
-                                    <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5 }}>
-                                        Perattukkottai, Sivaganga,<br />Tamil Nadu, India
+                        <h4 style={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'rgba(255,255,255,0.35)', marginBottom: 18 }}>Contact</h4>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                            {[
+                                { Icon: Mail, label: 'Email', value: 'mrltechnologies408@gmail.com', href: 'mailto:mrltechnologies408@gmail.com', color: '#1a6fff' },
+                                { Icon: MapPin, label: 'Office', value: 'Perattukkottai, Sivaganga, Tamil Nadu – 630702', color: '#f97316' },
+                            ].map(({ Icon, label, value, href, color }) => (
+                                <div key={label} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                                    <div style={{ width: 34, height: 34, borderRadius: 9, background: `${color}14`, border: `1px solid ${color}25`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                        <Icon size={15} color={color} />
+                                    </div>
+                                    <div>
+                                        <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.33)', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600, marginBottom: 2 }}>{label}</div>
+                                        {href
+                                            ? <a href={href} style={{ fontSize: '13px', color: 'rgba(255,255,255,0.68)', lineHeight: 1.45 }}>{value}</a>
+                                            : <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)', lineHeight: 1.45 }}>{value}</p>
+                                        }
                                     </div>
                                 </div>
-                            </div>
-                            <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                                <span style={{ fontSize: '16px' }}>🕒</span>
-                                <div>
-                                    <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', marginBottom: '2px' }}>Working Hours</div>
-                                    <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)' }}>Mon–Sat: 9:00 AM – 6:00 PM</div>
-                                </div>
-                            </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Social */}
+                    <div>
+                        <h4 style={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', color: 'rgba(255,255,255,0.35)', marginBottom: 18 }}>Follow Us</h4>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                            {socials.map(({ Icon, label, href, color, bg }) => (
+                                <a key={label} href={href} target="_blank" rel="noopener noreferrer"
+                                    style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 14px', borderRadius: 10, background: bg, border: `1px solid ${color}25`, transition: 'all 0.2s' }}
+                                    onMouseEnter={e => { e.currentTarget.style.transform = 'translateX(4px)'; e.currentTarget.style.borderColor = `${color}60`; }}
+                                    onMouseLeave={e => { e.currentTarget.style.transform = 'translateX(0)'; e.currentTarget.style.borderColor = `${color}25`; }}
+                                >
+                                    <Icon size={16} color={color} />
+                                    <span style={{ fontSize: '13.5px', color: 'rgba(255,255,255,0.7)', fontWeight: 500 }}>{label}</span>
+                                    <ExternalLink size={11} color="rgba(255,255,255,0.25)" style={{ marginLeft: 'auto' }} />
+                                </a>
+                            ))}
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Bottom Bar */}
-            <div style={{
-                borderTop: '1px solid rgba(255,255,255,0.07)',
-                padding: '20px 0',
-                background: 'rgba(0,0,0,0.3)'
-            }}>
-                <div className="container" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '12px' }}>
-                    <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)' }}>
-                        © 2025 M²RL TechnologieS. All rights reserved. Made in India 🇮🇳
+                {/* Divider */}
+                <div style={{ height: 1, background: 'rgba(255,255,255,0.06)', marginBottom: 24 }} />
+
+                {/* Bottom Bar */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
+                    <p style={{ fontSize: '12.5px', color: 'rgba(255,255,255,0.28)' }}>
+                        © {new Date().getFullYear()} M²RL TechnologieS. All rights reserved.
                     </p>
-                    <div style={{ display: 'flex', gap: '20px' }}>
-                        {[{ label: 'Privacy Policy', path: '/privacy' }, { label: 'Terms & Conditions', path: '/terms' }].map(({ label, path }) => (
-                            <Link key={path} to={path} style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)' }}
-                                onMouseEnter={e => e.target.style.color = '#0066ff'}
-                                onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.4)'}
-                            >
-                                {label}
-                            </Link>
+                    <div style={{ display: 'flex', gap: 20 }}>
+                        {legalLinks.map(({ label, path }) => (
+                            <Link key={path} to={path} style={{ fontSize: '12px', color: 'rgba(255,255,255,0.3)', transition: 'color 0.2s' }}
+                                onMouseEnter={e => e.target.style.color = 'rgba(255,255,255,0.7)'}
+                                onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.3)'}
+                            >{label}</Link>
                         ))}
                     </div>
                 </div>

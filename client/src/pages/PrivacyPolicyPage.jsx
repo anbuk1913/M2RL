@@ -1,36 +1,42 @@
+import { ShieldCheck, ChevronRight } from 'lucide-react';
+
 export default function PrivacyPolicyPage() {
     const sections = [
         {
             title: '1. Information We Collect',
-            content: 'We collect information you voluntarily provide through our contact form, including your name, email address, phone number, and message content. We do not collect any personal information automatically unless you submit a form.'
+            content: 'We collect information you voluntarily provide through our contact forms, including your name, email address, and message content. We do not collect sensitive personal information or payment data.',
         },
         {
             title: '2. How We Use Your Information',
-            content: 'The information we collect is used solely to respond to your queries, provide information about our products and services, and improve our customer communication. We do not use your data for automated decision-making or profiling.'
+            content: 'The information you provide is used solely to respond to your inquiries, facilitate business communications, and improve our services. We do not use your data for automated decision-making or profiling.',
         },
         {
-            title: '3. Data Storage & Security',
-            content: 'Contact form submissions are processed through our secure backend server. We implement appropriate technical and organizational security measures to protect your personal data against unauthorized access, loss, or disclosure.'
+            title: '3. Data Sharing & Disclosure',
+            content: 'M²RL TechnologieS does not sell, trade, or rent your personal information to third parties. We may share data with service providers who assist us in our operations, subject to confidentiality agreements.',
         },
         {
-            title: '4. Data Sharing',
-            content: 'M²RL TechnologieS does not sell, trade, or rent your personal information to third parties. We may share data with trusted service providers (e.g., email services) only as necessary to respond to your inquiry.'
+            title: '4. Data Security',
+            content: 'We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.',
         },
         {
-            title: '5. Cookies',
-            content: 'Our website is a static informational website and does not use tracking cookies. We may use essential session cookies for basic website functionality only.'
+            title: '5. Cookies & Tracking',
+            content: 'Our website may use basic cookies for functionality purposes. We do not use third-party tracking cookies or behavioral advertising systems. You can disable cookies in your browser settings.',
         },
         {
             title: '6. Your Rights',
-            content: 'You have the right to request access to, correction of, or deletion of any personal data we hold about you. To exercise these rights, please contact us at mrltechnologies408@gmail.com.'
+            content: 'You have the right to access, correct, or request deletion of your personal data. To exercise these rights, please contact us at mrltechnologies408@gmail.com.',
         },
         {
-            title: '7. Changes to This Policy',
-            content: 'We may update this Privacy Policy from time to time. We will notify you of any significant changes by updating the "Last Updated" date on this page.'
+            title: '7. Data Retention',
+            content: 'We retain your contact information only for as long as necessary to fulfill the purpose for which it was collected, or as required by applicable law.',
         },
         {
-            title: '8. Contact',
-            content: 'If you have questions about this Privacy Policy, please contact us at: mrltechnologies408@gmail.com — M²RL TechnologieS, Perattukkottai, Sivaganga, Tamil Nadu, India.'
+            title: '8. Changes to This Policy',
+            content: 'We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated effective date. Continued use of our website after changes constitutes your acceptance.',
+        },
+        {
+            title: '9. Contact Us',
+            content: 'If you have questions or concerns about this Privacy Policy, please contact us at: mrltechnologies408@gmail.com — M²RL TechnologieS, Perattukkottai, Sivaganga, Tamil Nadu, India.',
         },
     ];
 
@@ -38,24 +44,30 @@ export default function PrivacyPolicyPage() {
         <div>
             <div className="page-banner">
                 <div className="container">
-                    <div className="section-label">🔐 Legal</div>
-                    <h1 className="page-banner-title" style={{ marginTop: '12px' }}>Privacy Policy</h1>
-                    <p className="page-banner-subtitle">Last Updated: February 2025</p>
+                    <div className="section-label"><ShieldCheck size={13} />Legal</div>
+                    <h1 className="page-banner-title" style={{ marginTop: 14 }}>Privacy Policy</h1>
+                    <p className="page-banner-subtitle">How M²RL TechnologieS collects, uses, and protects your personal information.</p>
                 </div>
             </div>
             <div className="tricolor-stripe" />
+
             <section className="section section-light">
-                <div className="container">
-                    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                        <div className="card" style={{ marginBottom: '24px', background: 'rgba(0,102,255,0.04)', border: '1px solid rgba(0,102,255,0.15)' }}>
-                            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8 }}>
-                                M²RL TechnologieS ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. This policy explains how we handle information collected through our website.
-                            </p>
-                        </div>
+                <div className="container" style={{ maxWidth: 800 }}>
+                    <div style={{ padding: '12px 20px', borderRadius: 12, background: 'rgba(26,111,255,0.05)', border: '1px solid rgba(26,111,255,0.14)', marginBottom: 48, display: 'flex', gap: 10, alignItems: 'center' }}>
+                        <ShieldCheck size={18} color="#1a6fff" style={{ flexShrink: 0 }} />
+                        <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)' }}>
+                            <strong>Effective Date:</strong> February 2025 &nbsp;|&nbsp; <strong>M²RL TechnologieS</strong> is committed to protecting your privacy.
+                        </p>
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
                         {sections.map(({ title, content }) => (
-                            <div key={title} style={{ marginBottom: '32px' }}>
-                                <h3 style={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: '1.05rem', coulour: 'var(--text-primary)', marginBottom: '10px' }}>{title}</h3>
-                                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8 }}>{content}</p>
+                            <div key={title} style={{ padding: '28px 32px', borderRadius: 16, background: '#fff', border: '1px solid var(--border)', boxShadow: 'var(--shadow-card)' }}>
+                                <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 12 }}>
+                                    <ChevronRight size={16} color="#1a6fff" style={{ marginTop: 4, flexShrink: 0 }} />
+                                    <h3 style={{ fontFamily: 'Poppins', fontSize: '1.02rem', fontWeight: 700, color: 'var(--text-primary)' }}>{title}</h3>
+                                </div>
+                                <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 28 }}>{content}</p>
                             </div>
                         ))}
                     </div>

@@ -1,64 +1,108 @@
 import { Link } from 'react-router-dom';
+import {
+    Bot, Cpu, FlaskConical, Palette, Globe, Rocket,
+    Target, Send, CheckCircle2, ArrowRight
+} from 'lucide-react';
 
 const roles = [
-    { title: 'Embedded Systems Engineer', type: 'Full-time', skills: ['C/C++', 'Arduino', 'Raspberry Pi', 'RTOS'], icon: '🤖' },
-    { title: 'Agricultural IoT Specialist', type: 'Full-time', skills: ['Sensor Integration', 'AgriTech', 'Data Analysis', 'Field Testing'], icon: '🌾' },
-    { title: 'PCB Design Engineer', type: 'Full-time', skills: ['PCB Layout', 'KiCad', 'Altium', 'Circuit Design'], icon: '⚙' },
-    { title: 'Full Stack Developer', type: 'Full-time', skills: ['React', 'Node.js', 'IoT APIs', 'Cloud (AWS/GCP)'], icon: '💻' },
-    { title: 'R&D Intern', type: 'Internship', skills: ['Electronics', 'Research', 'Documentation', 'Willingness to Learn'], icon: '🔬' },
-    { title: 'Sales & Business Development', type: 'Full-time', skills: ['B2B Sales', 'Agriculture Sector', 'Client Relations', 'Tamil Nadu region preferred'], icon: '📊' },
+    { Icon: Bot, title: 'Embedded Systems Engineer', type: 'Full-time', skills: ['C/C++', 'Arduino', 'Raspberry Pi', 'RTOS'], color: '#1a6fff' },
+    { Icon: FlaskConical, title: 'R&D Sensor Specialist', type: 'Full-time', skills: ['Analog Sensors', 'Signal Processing', 'PCB Design'], color: '#10b981' },
+    { Icon: Cpu, title: 'IoT Systems Developer', type: 'Full-time', skills: ['MQTT', 'LoRa', 'Node.js', 'Cloud APIs'], color: '#8b5cf6' },
+    { Icon: Palette, title: 'UI/UX Product Designer', type: 'Part-time', skills: ['Figma', 'Prototyping', 'Design Systems'], color: '#f97316' },
+    { Icon: Globe, title: 'Web Developer', type: 'Freelance', skills: ['React', 'Vite', 'Node.js', 'CSS'], color: '#06b6d4' },
+];
+
+const perks = [
+    'Work on cutting-edge Indian sensor technology',
+    'Direct involvement in product R&D from day one',
+    'Flexible and growth-oriented work environment',
+    'Be part of a Make in India manufacturing startup',
+    'Shape the culture and engineering practices early on',
 ];
 
 export default function CareersPage() {
     return (
         <div>
+            {/* Banner */}
             <div className="page-banner">
                 <div className="container">
-                    <div className="section-label">🚀 Join Us</div>
-                    <h1 className="page-banner-title" style={{ marginTop: '12px' }}>Careers at M²RL</h1>
-                    <p className="page-banner-subtitle">Be part of India's smart sensor revolution. We're building a team of passionate innovators.</p>
+                    <div className="section-label"><Rocket size={13} />Join Our Team</div>
+                    <h1 className="page-banner-title" style={{ marginTop: 14 }}>Build the Future With Us</h1>
+                    <p className="page-banner-subtitle">M²RL TechnologieS is growing its core team. We are looking for talented engineers, designers, and innovators passionate about sensor technology and the Make in India movement.</p>
                 </div>
             </div>
             <div className="tricolor-stripe" />
 
-            {/* Hiring Notice */}
+            {/* Open Roles */}
             <section className="section section-light">
                 <div className="container">
-                    <div style={{ textAlign: 'center', padding: '40px', background: 'linear-gradient(135deg, rgba(0,102,255,0.05), rgba(255,153,51,0.03))', borderRadius: '20px', border: '1px solid rgba(0,102,255,0.1)', marginBottom: '48px' }}>
-                        <div style={{ fontSize: '3rem', marginBottom: '16px' }}>🎯</div>
-                        <h2 style={{ fontFamily: 'Poppins', fontSize: '1.8rem', fontWeight: 700, marginBottom: '12px' }}>We're Hiring Soon!</h2>
-                        <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, maxWidth: '600px', margin: '0 auto 24px' }}>
-                            M²RL TechnologieS is in the pre-launch phase. We are looking for passionate engineers, researchers, and innovators to join our founding team. Share your interest now and we'll reach out when positions open.
-                        </p>
-                        <span className="badge badge-saffron" style={{ fontSize: '14px', padding: '8px 20px' }}>📢 Positions Opening Soon</span>
-                    </div>
-
-                    {/* Roles */}
                     <div className="section-header">
-                        <div className="section-label">💼 Open Roles</div>
-                        <h2 className="section-title">Planned Positions</h2>
+                        <div className="section-label"><Target size={13} />Opportunities</div>
+                        <h2 className="section-title">Open Roles</h2>
+                        <p className="section-subtitle">We are in the hiring planning stage — positions open upon funding milestone completion</p>
                     </div>
-                    <div className="grid-3" style={{ gap: '24px', marginBottom: '48px' }}>
-                        {roles.map(({ title, type, skills, icon }) => (
-                            <div key={title} className="card" style={{ padding: '28px' }}>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-                                    <div style={{ fontSize: '2rem' }}>{icon}</div>
-                                    <span className={`badge ${type === 'Internship' ? 'badge-saffron' : 'badge-blue'}`}>{type}</span>
+                    <div className="grid-auto">
+                        {roles.map(({ Icon, title, type, skills, color }) => (
+                            <div key={title} className="card" style={{ padding: '32px 26px' }}>
+                                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14, marginBottom: 18 }}>
+                                    <div style={{ width: 50, height: 50, borderRadius: 14, background: `${color}14`, border: `1px solid ${color}28`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                        <Icon size={24} color={color} />
+                                    </div>
+                                    <div>
+                                        <h3 style={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: '0.97rem', color: 'var(--text-primary)', marginBottom: 6 }}>{title}</h3>
+                                        <span style={{ fontSize: '11px', fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: `${color}12`, color: color, border: `1px solid ${color}28`, textTransform: 'uppercase', letterSpacing: '0.5px' }}>{type}</span>
+                                    </div>
                                 </div>
-                                <h3 style={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: '1rem', marginBottom: '14px' }}>{title}</h3>
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
                                     {skills.map(s => (
-                                        <span key={s} style={{ padding: '3px 10px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, background: 'var(--off-white)', color: 'var(--text-secondary)', border: '1px solid var(--border)' }}>{s}</span>
+                                        <span key={s} style={{ fontSize: '11.5px', padding: '3px 10px', borderRadius: 100, background: 'var(--light-bg)', border: '1px solid var(--border)', color: 'var(--text-secondary)', fontWeight: 500 }}>{s}</span>
                                     ))}
                                 </div>
                             </div>
                         ))}
                     </div>
+                </div>
+            </section>
 
-                    <div style={{ textAlign: 'center' }}>
-                        <p style={{ color: 'var(--text-secondary)', marginBottom: '20px' }}>Interested? Drop us your details and we'll be in touch.</p>
-                        <Link to="/contact" className="btn btn-primary" style={{ fontSize: '16px', padding: '16px 36px' }}>📨 Express Your Interest</Link>
+            {/* Why Join */}
+            <section className="section section-dark">
+                <div className="container">
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 56, alignItems: 'center' }}>
+                        <div>
+                            <div className="section-label" style={{ marginBottom: 14 }}><CheckCircle2 size={13} />Why M²RL</div>
+                            <h2 className="section-title" style={{ marginTop: 0, marginBottom: 18 }}>Why Join Us?</h2>
+                            <p style={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.85, marginBottom: 28, fontSize: '15px' }}>
+                                Joining M²RL means being a founding-stage team member in a mission-driven startup with a clear product roadmap and real manufacturing infrastructure already in place.
+                            </p>
+                            <Link to="/contact" className="btn btn-primary">
+                                <Send size={16} /> Express Your Interest
+                            </Link>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                            {perks.map((perk, i) => (
+                                <div key={perk} style={{ display: 'flex', gap: 12, alignItems: 'center', padding: '14px 18px', borderRadius: 12, background: 'rgba(26,111,255,0.07)', border: '1px solid rgba(26,111,255,0.14)', animationDelay: `${i * 0.08}s` }}>
+                                    <CheckCircle2 size={16} color="#10b981" style={{ flexShrink: 0 }} />
+                                    <span style={{ color: 'rgba(255,255,255,0.75)', fontSize: '14px', lineHeight: 1.5 }}>{perk}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
+                </div>
+            </section>
+
+            {/* CTA */}
+            <section className="section section-light">
+                <div className="container" style={{ textAlign: 'center' }}>
+                    <div style={{ width: 80, height: 80, borderRadius: '50%', background: 'linear-gradient(135deg,rgba(26,111,255,0.1),rgba(249,115,22,0.08))', border: '1px solid rgba(26,111,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+                        <Target size={36} color="#1a6fff" />
+                    </div>
+                    <h2 className="section-title" style={{ marginBottom: 16 }}>Don't See Your Role?</h2>
+                    <p style={{ color: 'var(--text-muted)', maxWidth: 500, margin: '0 auto 32px', lineHeight: 1.75, fontSize: '15px' }}>
+                        We welcome initiative. If you're passionate about sensor technology and believe you can contribute, reach out with your profile.
+                    </p>
+                    <Link to="/contact" className="btn btn-primary" style={{ fontSize: '15.5px', padding: '14px 36px', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                        <ArrowRight size={16} /> Express Your Interest
+                    </Link>
                 </div>
             </section>
         </div>

@@ -1,77 +1,36 @@
-const agriProducts = [
-    { icon: '🌱', name: 'Soil Monitoring Sensor', desc: 'Real-time soil moisture, pH, and nutrient level monitoring for precision agriculture.' },
-    { icon: '🌿', name: 'Crop Health Sensor', desc: 'Detect crop stress, disease, and health conditions using embedded environment sensors.' },
-    { icon: '💧', name: 'Smart Irrigation Controller', desc: 'Automated irrigation system with sensor-driven water management and remote control.' },
-];
+import {
+    Sprout, Leaf, Droplets, Thermometer, FlaskConical,
+    Settings2, Cloud, MapPin, Smartphone, PlaneTakeoff,
+    Factory, Wrench, Rocket, Cpu, Building2, Clock, ChevronRight
+} from 'lucide-react';
 
-const industrialProducts = [
-    { icon: '🌡', name: 'Temperature Monitoring Sensor', desc: 'Industrial-grade temperature sensors for manufacturing processes and equipment health.' },
-    { icon: '🔬', name: 'Gas Detection System', desc: 'Detect hazardous gases in industrial environments with real-time alerts and logging.' },
-    { icon: '⚙', name: 'Machine Health Monitor', desc: 'Vibration and anomaly detection sensors to predict machine failures before they occur.' },
+const agriProducts = [
+    { Icon: Sprout, name: 'Soil Monitoring Sensor', desc: 'Real-time soil moisture, pH, and nutrient level monitoring for precision agriculture.' },
+    { Icon: Leaf, name: 'Crop Health Sensor', desc: 'Monitors crop growth indicators, leaf health, and environmental stress factors.' },
+    { Icon: Droplets, name: 'Irrigation Control System', desc: 'Smart irrigation sensors and automated valve controllers for water efficiency.' },
+    { Icon: Thermometer, name: 'Weather Station Module', desc: 'On-field micro-weather stations for real-time climate monitoring.' },
+    { Icon: FlaskConical, name: 'Fertilizer Dosing Sensor', desc: 'Automated nutrient dosing sensors for smart fertilizer management.' },
+    { Icon: Settings2, name: 'Drone Agri-Sensor Pack', desc: 'Lightweight sensor kits for drone-based agricultural surveillance.' },
 ];
 
 const iotProducts = [
-    { icon: '☁', name: 'Cloud Data Monitoring', desc: 'Stream sensor data to cloud platforms with dashboards and historical analytics.' },
-    { icon: '📍', name: 'Real-time Tracking', desc: 'GPS and telemetry-based real-time asset and environment tracking.' },
-    { icon: '📱', name: 'Mobile App Integration', desc: 'View sensor data, receive alerts, and control systems from mobile applications.' },
+    { Icon: Cloud, name: 'Industrial IoT Gateway', desc: 'Edge computing gateway for industrial sensor data aggregation.' },
+    { Icon: MapPin, name: 'Asset Tracking Module', desc: 'GPS + sensor-integrated tracking for logistics and field assets.' },
+    { Icon: Smartphone, name: 'Smart Factory Monitor', desc: 'Machine health and production KPI monitoring via mobile dashboard.' },
+    { Icon: PlaneTakeoff, name: 'Drone Data Hub', desc: 'Central hub for aggregating multi-drone sensor telemetry.' },
+    { Icon: Factory, name: 'Gas & Hazard Detector', desc: 'Industrial-grade gas leak and environmental hazard detection sensors.' },
+    { Icon: Wrench, name: 'Predictive Maintenance Kit', desc: 'Vibration and thermal sensors for machinery predictive maintenance.' },
 ];
 
-const futureProducts = [
-    { icon: '🛰', name: 'Drone Sensor Integration', desc: 'Specialized sensors designed for drone platforms for aerial agricultural and infrastructure inspection.' },
-    { icon: '🏭', name: 'Smart Factory Automation Kit', desc: 'End-to-end sensor kits for smart manufacturing environments and digital twin integration.' },
-    { icon: '🔧', name: 'Custom Sensor Development', desc: 'Bespoke sensor design and development tailored to specific industrial or research requirements.' },
-];
-
-function ProductCard({ icon, name, desc }) {
+function ProductCard({ Icon, name, desc, color = '#1a6fff' }) {
     return (
-        <div className="card" style={{ display: 'flex', gap: '16px', padding: '24px' }}>
-            <div style={{
-                width: '52px', height: '52px', flexShrink: 0,
-                borderRadius: '14px', background: 'linear-gradient(135deg, rgba(0,102,255,0.1), rgba(255,153,51,0.05))',
-                display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.6rem',
-                border: '1px solid rgba(0,102,255,0.15)'
-            }}>
-                {icon}
+        <div className="card" style={{ padding: '28px 24px', transition: 'all 0.3s' }}>
+            <div style={{ width: 50, height: 50, borderRadius: 14, background: `${color}14`, border: `1px solid ${color}28`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                <Icon size={24} color={color} />
             </div>
-            <div>
-                <h4 style={{ fontFamily: 'Poppins', fontSize: '0.95rem', fontWeight: 700, marginBottom: '6px' }}>{name}</h4>
-                <p style={{ fontSize: '13px', color: 'var(--text-muted)', lineHeight: 1.6 }}>{desc}</p>
-            </div>
+            <h3 style={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: '0.95rem', marginBottom: 8, color: 'var(--text-primary)' }}>{name}</h3>
+            <p style={{ fontSize: '13.5px', color: 'var(--text-muted)', lineHeight: 1.65 }}>{desc}</p>
         </div>
-    );
-}
-
-function CategorySection({ label, icon, title, products, dark }) {
-    return (
-        <section className={`section ${dark ? 'section-dark' : 'section-light'}`}>
-            <div className="container">
-                <div className="section-header">
-                    <div className="section-label">{icon} {label}</div>
-                    <h2 className="section-title">{title}</h2>
-                </div>
-                <div className="grid-3" style={{ gap: '24px' }}>
-                    {products.map((p) => (
-                        dark ? (
-                            <div key={p.name} className="card-glass" style={{ display: 'flex', gap: '16px', padding: '24px' }}>
-                                <div style={{
-                                    width: '52px', height: '52px', flexShrink: 0,
-                                    borderRadius: '14px', background: 'rgba(0,102,255,0.15)',
-                                    display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.6rem',
-                                }}>
-                                    {p.icon}
-                                </div>
-                                <div>
-                                    <h4 style={{ fontFamily: 'Poppins', color: '#fff', fontSize: '0.95rem', fontWeight: 700, marginBottom: '6px' }}>{p.name}</h4>
-                                    <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>{p.desc}</p>
-                                </div>
-                            </div>
-                        ) : (
-                            <ProductCard key={p.name} {...p} />
-                        )
-                    ))}
-                </div>
-            </div>
-        </section>
     );
 }
 
@@ -81,58 +40,83 @@ export default function ProductsPage() {
             {/* Banner */}
             <div className="page-banner">
                 <div className="container">
-                    <div className="section-label">🔬 Products</div>
-                    <h1 className="page-banner-title" style={{ marginTop: '12px' }}>Our Sensor Products</h1>
-                    <p className="page-banner-subtitle">Precision sensors for agriculture, industry, and IoT — crafted with research-driven innovation.</p>
+                    <div className="section-label"><Cpu size={13} />Our Products</div>
+                    <h1 className="page-banner-title" style={{ marginTop: 14 }}>Sensor Product Lineup</h1>
+                    <p className="page-banner-subtitle">Smart, affordable sensors engineered for Indian agriculture, industry, and IoT applications.</p>
                 </div>
             </div>
             <div className="tricolor-stripe" />
 
             {/* Development Notice */}
-            <section className="section section-light">
+            <section className="section section-light" style={{ paddingBottom: 0 }}>
                 <div className="container">
-                    <div style={{
-                        background: 'linear-gradient(135deg, rgba(255,153,51,0.08), rgba(0,102,255,0.05))',
-                        border: '1px solid rgba(255,153,51,0.25)',
-                        borderRadius: '20px',
-                        padding: '40px',
-                        textAlign: 'center'
-                    }}>
-                        <div style={{ fontSize: '3rem', marginBottom: '16px' }}>🔬</div>
-                        <h2 style={{ fontFamily: 'Poppins', fontSize: '1.6rem', fontWeight: 700, marginBottom: '12px' }}>Currently in Development Phase</h2>
-                        <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, maxWidth: '600px', margin: '0 auto 24px' }}>
-                            We are currently in our R&D and pre-manufacturing phase. Product launch is coming soon! The products listed below represent our planned lineup, designed for real-world agricultural, industrial, and IoT applications.
+                    <div style={{ textAlign: 'center', padding: '40px 32px', background: 'linear-gradient(135deg,rgba(26,111,255,0.05),rgba(249,115,22,0.03))', borderRadius: 20, border: '1px solid rgba(26,111,255,0.12)', marginBottom: 56 }}>
+                        <div style={{ width: 60, height: 60, borderRadius: 18, background: 'rgba(26,111,255,0.1)', border: '1px solid rgba(26,111,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 18px' }}>
+                            <Clock size={26} color="#1a6fff" />
+                        </div>
+                        <h2 style={{ fontFamily: 'Poppins', fontSize: '1.7rem', fontWeight: 700, marginBottom: 12 }}>Products Under Development</h2>
+                        <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, maxWidth: 620, margin: '0 auto 22px', fontSize: '15px' }}>
+                            M²RL TechnologieS is in the R&D and pre-manufacturing phase. The products listed below represent our planned lineup and are currently being engineered. Full availability follows funding-stage completion.
                         </p>
-                        <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                            <span className="badge badge-saffron">⚙ R&D Planning Completed</span>
-                            <span className="badge badge-blue">🏭 Manufacturing Setup – Funding Stage</span>
-                            <span className="badge badge-green">🚀 Launch Coming Soon</span>
+                        <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
+                            <span className="badge badge-saffron" style={{ padding: '6px 16px', fontSize: 12 }}>
+                                <Rocket size={12} /> Manufacturing Pending Funding
+                            </span>
+                            <span className="badge badge-blue" style={{ padding: '6px 16px', fontSize: 12 }}>
+                                <FlaskConical size={12} /> R&D In Progress
+                            </span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Product Sections */}
-            <CategorySection label="Agricultural" icon="🌾" title="Agricultural Sensors" products={agriProducts} dark={false} />
-            <CategorySection label="Industrial" icon="🏭" title="Industrial Sensors" products={industrialProducts} dark={true} />
-            <CategorySection label="IoT Systems" icon="📡" title="IoT Monitoring Systems" products={iotProducts} dark={false} />
+            {/* Agricultural Sensors */}
+            <section className="section section-light">
+                <div className="container">
+                    <div className="section-header">
+                        <div className="section-label"><Sprout size={13} />Category 01</div>
+                        <h2 className="section-title">Agricultural Sensor Systems</h2>
+                        <p className="section-subtitle">Precision sensors for smart farming, irrigation, and crop health monitoring</p>
+                    </div>
+                    <div className="grid-3">
+                        {agriProducts.map(p => <ProductCard key={p.name} {...p} color="#10b981" />)}
+                    </div>
+                </div>
+            </section>
 
-            {/* Future Products */}
+            {/* Industrial & IoT */}
             <section className="section section-dark">
                 <div className="container">
                     <div className="section-header">
-                        <div className="section-label">🚀 Future</div>
-                        <h2 className="section-title">Future Products</h2>
-                        <p className="section-subtitle">Our roadmap beyond the initial product launch</p>
+                        <div className="section-label"><Factory size={13} />Category 02</div>
+                        <h2 className="section-title">Industrial &amp; IoT Sensors</h2>
+                        <p className="section-subtitle">Reliable sensors for industrial automation, monitoring, and smart infrastructure</p>
                     </div>
-                    <div className="grid-3" style={{ gap: '24px' }}>
-                        {futureProducts.map(({ icon, name, desc }) => (
-                            <div key={name} className="card-glass" style={{ textAlign: 'center', padding: '36px 24px' }}>
-                                <div style={{ fontSize: '2.5rem', marginBottom: '16px' }}>{icon}</div>
-                                <h3 style={{ color: '#fff', fontFamily: 'Poppins', fontSize: '1.05rem', fontWeight: 700, marginBottom: '10px' }}>{name}</h3>
-                                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>{desc}</p>
+                    <div className="grid-3">
+                        {iotProducts.map(({ Icon, name, desc }) => (
+                            <div key={name} className="card-glass" style={{ padding: '28px 24px' }}>
+                                <div style={{ width: 50, height: 50, borderRadius: 14, background: 'rgba(26,111,255,0.12)', border: '1px solid rgba(26,111,255,0.22)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                                    <Icon size={24} color="#4d8fff" />
+                                </div>
+                                <h3 style={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: '0.95rem', marginBottom: 8, color: '#fff' }}>{name}</h3>
+                                <p style={{ fontSize: '13.5px', color: 'rgba(255,255,255,0.55)', lineHeight: 1.65 }}>{desc}</p>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA */}
+            <section className="section section-light">
+                <div className="container" style={{ textAlign: 'center' }}>
+                    <div className="section-label" style={{ marginBottom: 18 }}><Building2 size={13} />Partner With Us</div>
+                    <h2 className="section-title" style={{ marginBottom: 16 }}>Interested in Our Sensors?</h2>
+                    <p style={{ color: 'var(--text-muted)', marginBottom: 32, maxWidth: 500, margin: '0 auto 32px', fontSize: '15px', lineHeight: 1.7 }}>
+                        We welcome early partnerships, pilot projects, and investment discussions. Reach out to explore collaboration.
+                    </p>
+                    <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
+                        <a href="/contact" className="btn btn-primary"><ChevronRight size={16} />Get in Touch</a>
+                        <a href="/rnd" className="btn btn-outline"><FlaskConical size={16} />View R&D Work</a>
                     </div>
                 </div>
             </section>

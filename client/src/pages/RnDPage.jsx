@@ -1,90 +1,134 @@
+import {
+    Wheat, Factory, Radio, Bot, PlaneTakeoff, BatteryCharging,
+    FlaskConical, Microscope, Telescope, Handshake,
+    CheckCircle2, Settings2, Beaker, ArrowRight
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const areas = [
-    { icon: '🌾', title: 'Agricultural Sensor R&D', desc: 'Research into precision agriculture — soil composition, micro-climate monitoring, crop stress detection, and smart irrigation control systems.' },
-    { icon: '🏭', title: 'Industrial Automation R&D', desc: 'Development of industrial-grade sensors for temperature, vibration, gas detection, and machine health monitoring for manufacturing environments.' },
-    { icon: '📡', title: 'IoT Protocol Research', desc: 'Exploring LoRaWAN, MQTT, and edge-computing protocols for deploying sensor networks in low-connectivity rural and industrial environments.' },
-    { icon: '🤖', title: 'Embedded Systems Design', desc: 'Custom PCB design, firmware development, and embedded system architectures for real-time sensor data acquisition and processing.' },
-    { icon: '🛰', title: 'Drone & Remote Sensing', desc: 'Integration of sensors with UAV platforms for aerial data collection in large agricultural fields and infrastructure inspection.' },
-    { icon: '🔋', title: 'Energy Harvesting', desc: 'Research into solar-powered and low-power sensor systems for deployment in off-grid agricultural and remote industrial locations.' },
+const focusAreas = [
+    {
+        Icon: Wheat, title: 'Agricultural Sensor R&D',
+        desc: 'Research into precision agriculture — soil sensing, crop health monitoring, micro-weather stations, and drone-integrated sensor packs for the Indian farming sector.',
+        color: '#10b981', status: 'Active Research',
+    },
+    {
+        Icon: Factory, title: 'Industrial IoT Sensors',
+        desc: 'Development of gas detection, temperature-pressure, and vibration sensors for manufacturing environments and predictive maintenance systems.',
+        color: '#1a6fff', status: 'In Design Phase',
+    },
+    {
+        Icon: Radio, title: 'Wireless Sensor Networks',
+        desc: 'Low-power LoRa, Zigbee, and NB-IoT communication modules for large-scale remote sensor deployments in agriculture and infrastructure.',
+        color: '#8b5cf6', status: 'Prototyping',
+    },
+    {
+        Icon: Bot, title: 'Embedded Systems & Robotics',
+        desc: 'Custom PCB design, embedded firmware, and robotic automation systems for sensor-driven machines and autonomous field vehicles.',
+        color: '#f97316', status: 'Active Research',
+    },
+    {
+        Icon: PlaneTakeoff, title: 'Drone Sensor Integration',
+        desc: 'Lightweight multi-spectral and environmental sensor payloads for agricultural and industrial drone platforms.',
+        color: '#06b6d4', status: 'Conceptual Stage',
+    },
+    {
+        Icon: BatteryCharging, title: 'Energy Harvesting R&D',
+        desc: 'Solar and ambient energy harvesting circuits for self-powered remote sensor nodes used in field deployments.',
+        color: '#eab308', status: 'Early Research',
+    },
+];
+
+const milestones = [
+    { Icon: CheckCircle2, text: 'Company registered & MSME certified (Udyam)' },
+    { Icon: CheckCircle2, text: 'Startup India recognition received' },
+    { Icon: CheckCircle2, text: 'NSWS portal registration completed' },
+    { Icon: CheckCircle2, text: 'Land and three-phase power infrastructure secured' },
+    { Icon: CheckCircle2, text: 'Core R&D team formed and research initiated' },
+    { Icon: Settings2, text: 'Sensor prototype development — In Progress' },
+    { Icon: Settings2, text: 'PCB design & testing lab setup — Planned' },
+    { Icon: Beaker, text: 'Manufacturing launch — Pending Funding' },
 ];
 
 export default function RnDPage() {
     return (
         <div>
+            {/* Banner */}
             <div className="page-banner">
                 <div className="container">
-                    <div className="section-label">🔬 Research & Development</div>
-                    <h1 className="page-banner-title" style={{ marginTop: '12px' }}>Our R&D Division</h1>
-                    <p className="page-banner-subtitle">Innovation-first research driving the next generation of affordable Indian sensor technology.</p>
+                    <div className="section-label"><FlaskConical size={13} />Research & Development</div>
+                    <h1 className="page-banner-title" style={{ marginTop: 14 }}>R&D Division</h1>
+                    <p className="page-banner-subtitle">Our research-first philosophy drives the innovation behind every M²RL sensor product — from concept to prototype to production.</p>
                 </div>
             </div>
             <div className="tricolor-stripe" />
 
-            {/* Intro */}
-            <section className="section section-light">
-                <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '48px', alignItems: 'center' }}>
-                        <div>
-                            <div className="section-label">🧬 Our Philosophy</div>
-                            <h2 style={{ fontFamily: 'Poppins', fontSize: '1.8rem', fontWeight: 800, marginTop: '12px', marginBottom: '20px' }}>Research-Driven Innovation</h2>
-                            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: '16px' }}>
-                                At M²RL TechnologieS, R&D is not an afterthought — it is the foundation of everything we build. Our research division focuses on developing sensor technologies that are not only technically advanced, but also affordable and relevant to Indian conditions.
-                            </p>
-                            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: '24px' }}>
-                                Our R&D planning is complete with a clear roadmap for agricultural, industrial, and IoT sensor development. We are now transitioning from research to manufacturing as funding comes into place.
-                            </p>
-                            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                                <span className="badge badge-blue">✔ R&D Planning Completed</span>
-                                <span className="badge badge-saffron">⚙ Pre-Manufacturing Phase</span>
-                                <span className="badge badge-green">🔬 Research-Driven</span>
-                            </div>
-                        </div>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-                            {[
-                                { number: '5+', label: 'R&D Focus Areas' },
-                                { number: '3', label: 'Product Categories' },
-                                { number: '₹21L+', label: 'Investment Planned' },
-                                { number: '100%', label: 'R&D Planning Done' },
-                            ].map(({ number, label }) => (
-                                <div key={label} className="card" style={{ textAlign: 'center', padding: '28px 20px' }}>
-                                    <div style={{ fontFamily: 'Poppins', fontSize: '2rem', fontWeight: 800, color: 'var(--accent)', marginBottom: '6px' }}>{number}</div>
-                                    <div style={{ fontSize: '13px', color: 'var(--text-muted)', fontWeight: 500 }}>{label}</div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* R&D Areas */}
+            {/* Focus Areas */}
             <section className="section section-dark">
                 <div className="container">
                     <div className="section-header">
-                        <div className="section-label">🔭 Research Areas</div>
-                        <h2 className="section-title">Our Focus Areas</h2>
-                        <p className="section-subtitle">Six key research domains shaping the future of M²RL TechnologieS</p>
+                        <div className="section-label"><Microscope size={13} />Research Areas</div>
+                        <h2 className="section-title">Our R&D Focus Areas</h2>
+                        <p className="section-subtitle">Six core research verticals driving the next generation of Indian sensor technology</p>
                     </div>
-                    <div className="grid-3" style={{ gap: '24px' }}>
-                        {areas.map(({ icon, title, desc }) => (
-                            <div key={title} className="card-glass" style={{ padding: '28px' }}>
-                                <div style={{ fontSize: '2rem', marginBottom: '14px' }}>{icon}</div>
-                                <h3 style={{ fontFamily: 'Poppins', color: '#fff', fontSize: '1rem', fontWeight: 700, marginBottom: '12px' }}>{title}</h3>
-                                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7 }}>{desc}</p>
+                    <div className="grid-3" style={{ gap: 24 }}>
+                        {focusAreas.map(({ Icon, title, desc, color, status }) => (
+                            <div key={title} className="card-glass" style={{ padding: '32px 28px', borderTop: `2px solid ${color}50` }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 18 }}>
+                                    <div style={{ width: 52, height: 52, borderRadius: 14, background: `${color}15`, border: `1px solid ${color}30`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <Icon size={24} color={color} />
+                                    </div>
+                                    <span style={{ fontSize: 11, fontWeight: 600, padding: '4px 10px', borderRadius: 100, background: `${color}15`, color: color, border: `1px solid ${color}30`, whiteSpace: 'nowrap' }}>
+                                        {status}
+                                    </span>
+                                </div>
+                                <h3 style={{ fontFamily: 'Poppins', fontSize: '1.02rem', fontWeight: 700, color: '#fff', marginBottom: 10 }}>{title}</h3>
+                                <p style={{ fontSize: '13.5px', color: 'rgba(255,255,255,0.55)', lineHeight: 1.7 }}>{desc}</p>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* CTA */}
+            {/* Milestones */}
             <section className="section section-light">
+                <div className="container">
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 56, alignItems: 'center' }}>
+                        <div>
+                            <div className="section-label"><Telescope size={13} />Progress</div>
+                            <h2 className="section-title" style={{ textAlign: 'left', marginTop: 14, marginBottom: 18 }}>R&D Milestones</h2>
+                            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.85, marginBottom: 28, fontSize: '15.5px' }}>
+                                Our R&D journey has been methodical — starting with legal establishment and infrastructure, and moving towards full-scale prototype development and manufacturing readiness.
+                            </p>
+                            <Link to="/investor" className="btn btn-primary">
+                                <ArrowRight size={16} /> View Investment Details
+                            </Link>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                            {milestones.map(({ Icon, text }, i) => {
+                                const done = i < 5;
+                                return (
+                                    <div key={text} style={{ display: 'flex', alignItems: 'flex-start', gap: 14, padding: '14px 18px', borderRadius: 12, background: done ? 'rgba(16,185,129,0.06)' : 'rgba(26,111,255,0.04)', border: `1px solid ${done ? 'rgba(16,185,129,0.18)' : 'rgba(26,111,255,0.12)'}` }}>
+                                        <Icon size={18} color={done ? '#10b981' : '#1a6fff'} style={{ flexShrink: 0, marginTop: 1 }} />
+                                        <span style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{text}</span>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Collaboration CTA */}
+            <section className="section section-dark">
                 <div className="container" style={{ textAlign: 'center' }}>
-                    <h2 style={{ fontFamily: 'Poppins', fontSize: '2rem', fontWeight: 700, marginBottom: '16px' }}>Collaborate with Our R&D Team</h2>
-                    <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, maxWidth: '600px', margin: '0 auto 32px' }}>
-                        Are you a researcher, institution, or industry partner interested in sensor technology collaboration? We'd love to connect with you.
+                    <div className="section-label" style={{ marginBottom: 18 }}><Handshake size={13} />Collaborate</div>
+                    <h2 className="section-title" style={{ marginBottom: 16 }}>Partner in Research</h2>
+                    <p className="section-subtitle" style={{ marginBottom: 36 }}>
+                        We welcome academic institutions, tech companies, and individual researchers to collaborate on sensor R&D projects.
                     </p>
-                    <Link to="/contact" className="btn btn-primary" style={{ fontSize: '16px', padding: '16px 36px' }}>🤝 Start a Collaboration</Link>
+                    <Link to="/contact" className="btn btn-saffron">
+                        <ArrowRight size={16} /> Reach Out for Collaboration
+                    </Link>
                 </div>
             </section>
         </div>

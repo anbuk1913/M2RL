@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { SearchX, Home } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -16,10 +17,10 @@ import RnDPage from './pages/RnDPage';
 function NotFoundPage() {
     return (
         <div style={{ minHeight: '80vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '40px' }}>
-            <div style={{ fontSize: '6rem', marginBottom: '24px' }}>🔍</div>
+            <div style={{ marginBottom: '24px' }}><SearchX size={96} color="#0066ff" strokeWidth={1.2} /></div>
             <h1 style={{ fontFamily: 'Poppins', fontSize: '2.5rem', fontWeight: 800, marginBottom: '16px' }}>Page Not Found</h1>
             <p style={{ color: 'var(--text-muted)', marginBottom: '32px', fontSize: '1.1rem' }}>The page you're looking for doesn't exist.</p>
-            <a href="/" className="btn btn-primary">🏠 Go Home</a>
+            <a href="/" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}><Home size={16} /> Go Home</a>
         </div>
     );
 }
