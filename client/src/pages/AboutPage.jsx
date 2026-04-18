@@ -5,12 +5,12 @@ import {
 } from 'lucide-react';
 
 const team = [
-    { name: 'Logesh', role: 'Founder', desc: "Visionary leading M²RL's sensor innovation journey." },
+    { name: 'Logesh', role: 'Founder', desc: "Visionary leading M²RL's sensor innovation journey.", img: '/employees/lokesh.png' },
     { name: 'Anbukumar', role: 'Website Developer', desc: 'Building the digital presence of M²RL.' },
     { name: 'Jayaseelan', role: 'CEO', desc: 'Steering business strategy and growth initiatives.' },
     { name: 'Mis. Lokesh', role: 'Managing Director', desc: 'Overseeing operations and R&D management.' },
     { name: 'Kaviya', role: 'Design Support', desc: 'Leading product and communication design.' },
-    { name: 'Priyadharshini', role:'Human Resources', desc:'Managing recruitment, employee relations, and organizational development to build a strong and positive workplace culture.' },
+    { name: 'Priyadharshini', role:'Human Resources', desc:'Managing recruitment, employee relations, and organizational development to build a strong and positive workplace culture.', img:"/employees/priyadharshini.png" },
     { name: 'Prabhakar', role: 'Supporting', desc: 'Supporting core operations and project execution, ensuring smooth coordination and contributing to overall team efficiency.' },
     { name: 'Venuvignesh', role: 'CA', desc: 'Childhood friend & early supporter of M²RL TechnologieS, contributed ideas and planning support, CA license to be applied after 3 years.' }
     
@@ -35,12 +35,17 @@ export default function AboutPage() {
         <div>
             {/* Banner */}
             <div className="page-banner">
-                <div className="container">
-                    <div className="section-label"><Building2 size={13} />About Us</div>
-                    <h1 className="page-banner-title" style={{ marginTop: 14 }}>M²RL TechnologieS</h1>
-                    <p className="page-banner-subtitle">Emerging sensor manufacturing & R&D startup from Tamil Nadu, India, driving affordable innovation for agriculture, industry, and IoT.</p>
-                </div>
-            </div>
+    <div className="container" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 40, flexWrap: 'wrap' }}>
+        <div style={{ flex: 1, minWidth: 280 }}>
+            <div className="section-label"><Building2 size={13} />About Us</div>
+            <h1 className="page-banner-title" style={{ marginTop: 14 }}>M²RL TechnologieS</h1>
+            <p className="page-banner-subtitle">Emerging sensor manufacturing & R&D startup from Tamil Nadu, India, driving affordable innovation for agriculture, industry, and IoT.</p>
+        </div>
+        <div style={{ flexShrink: 0 }}>
+            <h1><a target='_blank' href="https://anbukumar.com" >Developed By Anbu</a></h1>
+        </div>
+    </div>
+</div>
             <div className="tricolor-stripe" />
 
             {/* Company Overview */}
@@ -118,10 +123,14 @@ export default function AboutPage() {
                         <p className="section-subtitle">The passionate people behind M²RL TechnologieS</p>
                     </div>
                     <div className="grid-auto">
-                        {team.map(({ name, role, desc }) => (
+                        {team.map(({ name, role, desc, img }) => (
                             <div key={name} className="card" style={{ textAlign: 'center', padding: '36px 28px' }}>
                                 <div style={{ width: 76, height: 76, borderRadius: '50%', background: 'linear-gradient(135deg,#1a6fff,#0052e6)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 18px', boxShadow: '0 8px 28px rgba(26,111,255,0.3)', border: '2px solid rgba(26,111,255,0.3)' }}>
-                                    <User size={30} color="#fff" />
+                                    {img ? (
+                                        <img src={img} alt={name} style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
+                                    ) : (
+                                        <User size={30} color="#fff" />
+                                    )}
                                 </div>
                                 <h3 style={{ fontFamily: 'Poppins', fontSize: '1.05rem', fontWeight: 700, marginBottom: 6, color: 'var(--text-primary)' }}>{name}</h3>
                                 <span className="badge badge-blue" style={{ marginBottom: 14, display: 'inline-block' }}>{role}</span>

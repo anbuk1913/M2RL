@@ -7,8 +7,9 @@ import {
     Youtube, Facebook, Instagram, Linkedin,
     Mail, MapPin, Building2, Cpu, ShieldCheck,
     Send, Loader2, CheckCircle2, TrendingUp, Megaphone,
-    PhoneCall, ArrowRight
+    PhoneCall, ArrowRight, Twitter
 } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
 import './HomePage.css';
 
 /* ── Animated Progress Bar ── */
@@ -55,6 +56,8 @@ const socialLinks = [
     { Icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61584367014521', bg: '#1877f2' },
     { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/mrl_technologies_/', bg: 'linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)' },
     { Icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/m²rl-t-bbb405290', bg: '#0a66c2' },
+    { Icon: Twitter, label: 'X', href: 'https://x.com/MRLTechnologieS', bg: '#000000' },
+    { Icon: FaWhatsapp, label: 'Whatsapp', href: 'https://wa.me/918148918514', bg: 'green' }
 ];
 
 const stats = [
@@ -167,7 +170,7 @@ export default function HomePage() {
                         </div>
 
                         <div>
-                            <div className="card-glass" style={{ background: 'linear-gradient(160deg,rgba(26,111,255,0.06),rgba(249,115,22,0.04))', border: '1px solid rgba(26,111,255,0.15)' }}>
+                            <div className="card-glass" style={{ background: '#0a1f3f-light', border: '1px solid rgba(26,111,255,0.15)' }}>
                                 <div style={{ textAlign: 'center', padding: '16px 8px 8px' }}>
                                     <img src="/logo.jpeg" alt="M²RL" style={{ width: '110px', borderRadius: '18px', marginBottom: '20px', boxShadow: '0 10px 36px rgba(26,111,255,0.25)', border: '2px solid rgba(26,111,255,0.2)' }} />
                                     <h3 style={{ fontFamily: 'Poppins', fontWeight: 700, marginBottom: '6px', color: '#fff' }}>M²RL TechnologieS</h3>
