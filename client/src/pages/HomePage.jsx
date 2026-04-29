@@ -64,7 +64,7 @@ const stats = [
     { num: '2024', label: 'Founded' },
     { num: '5+', label: 'Sensor Systems' },
     { num: 'TN', label: 'Tamil Nadu Based' },
-    { num: '₹25L', label: 'Investment Ready' },
+    { num: '₹28L', label: 'Investment Ready' },
 ];
 
 export default function HomePage() {
@@ -119,10 +119,10 @@ export default function HomePage() {
                         <Link to="/contact" className="btn btn-secondary"><PhoneCall size={16} />Contact Us</Link>
                     </div>
 
-                    <div className="hero__scroll-hint">
+                    {/* <div className="hero__scroll-hint">
                         <div className="hero__scroll-arrow" />
                         <span>Scroll to explore</span>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="tricolor-stripe" style={{ marginTop: 0, position: 'absolute', bottom: 0, left: 0, right: 0 }} />
@@ -170,7 +170,7 @@ export default function HomePage() {
                         </div>
 
                         <div>
-                            <div className="card-glass" style={{ background: '#0a1f3f-light', border: '1px solid rgba(26,111,255,0.15)' }}>
+                            <div className="card-glass" style={{ background: '#0a1f3fff', border: '1px solid rgba(26,111,255,0.15)' }}>
                                 <div style={{ textAlign: 'center', padding: '16px 8px 8px' }}>
                                     <img src="/logo.jpeg" alt="M²RL" style={{ width: '110px', borderRadius: '18px', marginBottom: '20px', boxShadow: '0 10px 36px rgba(26,111,255,0.25)', border: '2px solid rgba(26,111,255,0.2)' }} />
                                     <h3 style={{ fontFamily: 'Poppins', fontWeight: 700, marginBottom: '6px', color: '#fff' }}>M²RL TechnologieS</h3>
@@ -179,7 +179,7 @@ export default function HomePage() {
                                         { label: 'Founded', value: '2024' },
                                         { label: 'Sector', value: 'Sensor Manufacturing & R&D' },
                                         { label: 'Status', value: 'Pre-Revenue / Funding Stage' },
-                                        { label: 'Investment', value: '₹21–25 Lakhs' },
+                                        { label: 'Investment', value: '₹28 Lakhs' },
                                     ].map(({ label, value }) => (
                                         <div key={label} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.07)', fontSize: '13.5px' }}>
                                             <span style={{ color: 'rgba(255,255,255,0.45)' }}>{label}</span>

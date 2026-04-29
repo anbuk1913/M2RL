@@ -64,7 +64,7 @@ export default function InvestorPage() {
                                     { label: 'Type', value: 'Sensor Manufacturing & R&D Startup' },
                                     { label: 'Location', value: 'Perattukkottai, Sivaganga, Tamil Nadu' },
                                     { label: 'Stage', value: 'Pre-Revenue / Seed Funding' },
-                                    { label: 'Ask', value: '₹21–25 Lakhs (INR)' },
+                                    { label: 'Ask', value: '₹28 Lakhs (INR)' },
                                     { label: 'Use', value: 'Machinery, Infrastructure & R&D' },
                                 ].map(({ label, value }) => (
                                     <div key={label} style={{ display: 'flex', gap: 16, padding: '14px 0', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>

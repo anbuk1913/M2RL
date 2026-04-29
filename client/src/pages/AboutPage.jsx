@@ -6,13 +6,13 @@ import {
 
 const team = [
     { name: 'Logesh', role: 'Founder', desc: "Visionary leading M²RL's sensor innovation journey.", img: '/employees/lokesh.png' },
-    { name: 'Anbukumar', role: 'Website Developer', desc: 'Building the digital presence of M²RL.' },
-    { name: 'Jayaseelan', role: 'CEO', desc: 'Steering business strategy and growth initiatives.' },
+    { name: 'Anbukumar', role: 'Website Developer', desc: 'Building the digital presence of M²RL.', img: '/employees/Anbu.png' },
+    { name: 'Jayaseelan', role: 'CEO', desc: 'Steering business strategy and growth initiatives.', img: '/employees/Jayaseelan.png' },
     { name: 'Mis. Lokesh', role: 'Managing Director', desc: 'Overseeing operations and R&D management.' },
-    { name: 'Kaviya', role: 'Design Support', desc: 'Leading product and communication design.' },
+    { name: 'Kaviya', role: 'Design Support', desc: 'Leading product and communication design.', img: '/employees/Kaviya.png' },
     { name: 'Priyadharshini', role:'Human Resources', desc:'Managing recruitment, employee relations, and organizational development to build a strong and positive workplace culture.', img:"/employees/priyadharshini.png" },
-    { name: 'Prabhakar', role: 'Supporting', desc: 'Supporting core operations and project execution, ensuring smooth coordination and contributing to overall team efficiency.' },
-    { name: 'Venuvignesh', role: 'CA', desc: 'Childhood friend & early supporter of M²RL TechnologieS, contributed ideas and planning support, CA license to be applied after 3 years.' }
+    { name: 'Prabhakar', role: 'Supporting', desc: 'Supporting core operations and project execution, ensuring smooth coordination and contributing to overall team efficiency.', img: '/employees/Prabhakar.png' },
+    { name: 'Venuvignesh', role: 'CA', desc: 'Childhood friend & early supporter of M²RL TechnologieS, contributed ideas and planning support, CA license to be applied after 3 years.', img: '/employees/Venuvignesh.png' }
     
 ];
 
