@@ -27,7 +27,7 @@ const legalLinks = [
 const socials = [
     { Icon: Youtube, label: 'YouTube', href: 'https://www.youtube.com/@M2RLTechnologieS', color: '#ff0000', bg: 'rgba(255,0,0,0.1)' },
     { Icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61584367014521', color: '#1877f2', bg: 'rgba(24,119,242,0.1)' },
-    { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/mrl_technologies_/', color: '#e1306c', bg: 'rgba(225,48,108,0.1)' },
+    { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/m2rl_technologies_', color: '#e1306c', bg: 'rgba(225,48,108,0.1)' },
     { Icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/m²rl-t-bbb405290', color: '#0a66c2', bg: 'rgba(10,102,194,0.1)' },
     { Icon: Twitter, label: 'X', href: 'https://x.com/MRLTechnologieS', color: '#000000', bg: 'rgba(221, 221, 221, 0.1)  '},
     { Icon: FaWhatsapp, label: "Whatsapp", href: 'https://wa.me/918148918514', color: 'green', bg: 'rgba(0,255,0,0.1)' }

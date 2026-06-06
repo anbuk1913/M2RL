@@ -54,7 +54,7 @@ const reasons = [
 const socialLinks = [
     { Icon: Youtube, label: 'YouTube', href: 'https://www.youtube.com/@M2RLTechnologieS', bg: '#ff0000' },
     { Icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61584367014521', bg: '#1877f2' },
-    { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/mrl_technologies_/', bg: 'linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)' },
+    { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/m2rl_technologies_', bg: 'linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)' },
     { Icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/m²rl-t-bbb405290', bg: '#0a66c2' },
     { Icon: Twitter, label: 'X', href: 'https://x.com/MRLTechnologieS', bg: '#000000' },
     { Icon: FaWhatsapp, label: 'Whatsapp', href: 'https://wa.me/918148918514', bg: 'green' }
