@@ -1,0 +1,140 @@
+.content-wrap {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+  background: #fff;
+}
+
+.logo-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.logo-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll 15s linear infinite;
+}
+
+.logo-slider:hover .logo-track {
+  animation-play-state: paused;
+}
+
+.logo-item {
+  position: relative;
+  flex-shrink: 0;
+  width: 180px;
+  height: 100px;
+  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-item img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-item img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.logo-item:hover img {
+  transform: scale(1.05);
+}
+
+.cm-eyebrow {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cm-muted);
+    margin: 0 0 28px;
+    font-weight: 600;
+}
+
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Animation Classes */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.top-animated {
+  animation-name: slideFromTop;
+}
+
+.middle-animated {
+  animation-name: fadeIn;
+}
+
+.bottom-animated {
+  animation-name: slideFromBottom;
+}
+
+.logo-name {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.logo-item:hover .logo-name {
+  opacity: 1;
+  visibility: visible;
+  bottom: -5px;
+}
+
+@keyframes slideFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

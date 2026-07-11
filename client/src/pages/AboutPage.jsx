@@ -3,8 +3,12 @@ import {
     Building2, User, MapPin, Zap, Droplets, Factory,
     Globe, Target, HardHat, Users, IndianRupee, ChevronRight
 } from 'lucide-react';
+import ClientMarquee from '../components/Collabration'
 
 const team = [
+    { name: 'Manickam', role: 'Family Member', desc: 'Supporting the vision and mission of M²RL.', img: '/employees/Manickam.png' },
+    { name: 'Megala', role: 'Family Member', desc: 'Supporting the vision and mission of M²RL.', img: '/employees/Megala.png' },
+    { name: 'Radha', role: 'Family Member', desc: 'Supporting the vision and mission of M²RL.', img: '/employees/Radha.png' },
     { name: 'Logesh', role: 'Founder', desc: "Visionary leading M²RL's sensor innovation journey.", img: '/employees/lokesh.png' },
     { name: 'Anbukumar', role: 'Website Developer', desc: 'Building the digital presence of M²RL.', img: '/employees/Anbu.png' },
     { name: 'Jayaseelan', role: 'CEO', desc: 'Steering business strategy and growth initiatives.', img: '/employees/Jayaseelan.png' },
@@ -35,17 +39,17 @@ export default function AboutPage() {
         <div>
             {/* Banner */}
             <div className="page-banner">
-    <div className="container" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 40, flexWrap: 'wrap' }}>
-        <div style={{ flex: 1, minWidth: 280 }}>
-            <div className="section-label"><Building2 size={13} />About Us</div>
-            <h1 className="page-banner-title" style={{ marginTop: 14 }}>M²RL TechnologieS</h1>
-            <p className="page-banner-subtitle">Emerging sensor manufacturing & R&D startup from Tamil Nadu, India, driving affordable innovation for agriculture, industry, and IoT.</p>
-        </div>
-        <div style={{ flexShrink: 0 }}>
-            <h1><a target='_blank' href="https://anbukumar.com" >Developed By Anbu</a></h1>
-        </div>
-    </div>
-</div>
+                <div className="container" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 40, flexWrap: 'wrap' }}>
+                    <div style={{ flex: 1, minWidth: 280 }}>
+                        <div className="section-label"><Building2 size={13} />About Us</div>
+                        <h1 className="page-banner-title" style={{ marginTop: 14 }}>M²RL TechnologieS</h1>
+                        <p className="page-banner-subtitle">Emerging sensor manufacturing & R&D startup from Tamil Nadu, India, driving affordable innovation for agriculture, industry, and IoT.</p>
+                    </div>
+                    <div style={{ flexShrink: 0 }}>
+                        <h1><a target='_blank' href="https://anbukumar.com" >Developed By Anbu</a></h1>
+                    </div>
+                </div>
+            </div>
             <div className="tricolor-stripe" />
 
             {/* Company Overview */}
@@ -113,7 +117,15 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
-
+            <ClientMarquee
+                topRow={[
+                    "/logos/acme.svg",
+                    "/logos/globex.svg",
+                    { src: "/logos/umbrella.png", alt: "Umbrella Corp" },
+                ]}
+                middleRow={["/logos/stark.svg", "/logos/wayne.svg"]}
+                bottomRow={["/logos/hooli.svg", "/logos/soylent.svg"]}
+            />
             {/* Leadership Team */}
             <section className="section section-light">
                 <div className="container">
