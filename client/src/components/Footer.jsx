@@ -14,6 +14,7 @@ const navLinks = [
     { label: 'About', path: '/about' },
     { label: 'Products', path: '/products' },
     { label: 'R&D Division', path: '/rnd' },
+    { label: 'Achievements', path: '/achievements' },
     { label: 'Investor Info', path: '/investor' },
     { label: 'Careers', path: '/careers' },
     { label: 'Contact', path: '/contact' },
@@ -30,7 +31,7 @@ const socials = [
     { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/m2rl_technologies_', color: '#e1306c', bg: 'rgba(225,48,108,0.1)' },
     { Icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/m²rl-t-bbb405290', color: '#0a66c2', bg: 'rgba(10,102,194,0.1)' },
     { Icon: Twitter, label: 'X', href: 'https://x.com/MRLTechnologieS', color: '#000000', bg: 'rgba(221, 221, 221, 0.1)  '},
-    { Icon: FaWhatsapp, label: "Whatsapp", href: 'https://wa.me/918148918514', color: 'green', bg: 'rgba(0,255,0,0.1)' }
+    { Icon: FaWhatsapp, label: "Whatsapp", href: 'https://wa.me/917530018514', color: 'green', bg: 'rgba(0,255,0,0.1)' }
 ];
 
 export default function Footer() {

@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
+import AnimatedBackground from './AnimatedBackground';
 
 const navLinks = [
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
     { label: 'Achievements', path: '/achievements' },
+    { label: 'Projects', path: '/projects' },
     { label: 'Products', path: '/products' },
     { label: 'Contact', path: '/contact' },
 ];
@@ -36,8 +38,9 @@ export default function Navbar() {
     }, [location]);
 
     return (
-        <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
-            <div className="container navbar__inner">
+        <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`} style={{ position: 'relative', overflow: 'hidden' }}>
+            <AnimatedBackground />
+            <div className="container navbar__inner" style={{ position: 'relative', zIndex: 1 }}>
                 {/* Logo */}
                 <Link to="/" className="navbar__brand">
                     <img src="/logo.jpeg" alt="M²RL TechnologieS Logo" className="navbar__logo" />
@@ -70,7 +73,7 @@ export default function Navbar() {
                             More ▾
                         </button>
                         {dropdownOpen && (
-                            <ul className="navbar__dropdown">
+                            <ul className="navbar__dropdown" >
                                 {extraLinks.map(({ label, path }) => (
                                     <li key={path}>
                                         <NavLink to={path} className="navbar__dropdown-link">{label}</NavLink>
@@ -82,9 +85,7 @@ export default function Navbar() {
                 </ul>
 
                 {/* CTA */}
-                <Link to="/contact" className="btn btn-primary navbar__cta">
-                    Get in Touch
-                </Link>
+                
 
                 {/* Mobile Hamburger */}
                 <button
@@ -98,7 +99,7 @@ export default function Navbar() {
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className="navbar__mobile">
+                 <div className="navbar__mobile" style={{ position: 'relative', zIndex: 1 }}>
                     <ul>
                         {[...navLinks, ...extraLinks].map(({ label, path }) => (
                             <li key={path}>

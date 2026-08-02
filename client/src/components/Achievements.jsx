@@ -5,42 +5,42 @@ const achievements = [
   {
     id: 1,
     img: '/Achievements/Anbu.png',
-    title: 'AWS Solutions Architect',
+    title: 'Supporting MSME Registration for ANBUKUMAR.CAREERS',
     category: 'CERTIFICATION',
-    date: 'AUG 2019',
-    description: 'Passed the professional-level exam on the first attempt and re-architected our staging environment around it.',
+    date: 'FEB 2026',
+    description: 'Successfully assisted ANBUKUMAR.CAREERS in obtaining MSME (Udyam) Registration, enabling the organization to access government recognition and business development opportunities.',
   },
   {
     id: 2,
     img: '/Achievements/Oscar.png',
-    title: 'Shipped v1.0 Solo',
-    category: 'MILESTONE',
-    date: 'MAR 2020',
-    description: 'Built and launched a scheduling tool end to end — design, backend, and support docs — in one quarter.',
+    title: 'Supporting MSME Registration for OSCAR ACADEMY',
+    category: 'CERTIFICATION',
+    date: 'MAR 2026',
+    description: 'Successfully guided OSCAR ACADEMY through the MSME (Udyam) Registration process, This achievement reflects our dedication to helping educational institutions gain government recognition and unlock opportunities for sustainable growth.',
   },
   {
     id: 3,
     img: '/Achievements/STJ.png',
-    title: 'Studio Innovation Prize',
-    category: 'AWARD',
+    title: 'Supporting MSME Registration for STJ ACADEMY',
+    category: 'CERTIFICATION',
     date: 'JUN 2021',
-    description: 'Runner-up out of forty submissions for a prototype that cut onboarding time from twenty minutes to three.',
+    description: 'Successfully assisted STJ ACADEMY in obtaining MSME (Udyam) Registration, enabling the organization to access government recognition and business development opportunities.',
   },
   {
     id: 4,
     img: '/Achievements/Oscar-Tab.png',
-    title: 'Featured in Field Notes',
-    category: 'PUBLICATION',
-    date: 'NOV 2022',
-    description: 'Wrote a long-form piece on offline-first mobile design, later cited in two conference talks.',
+    title: 'M²RL TechnologieS & OSCAR ACADEMY – Student Digital Empowerment Program',
+    category: 'STUDENT DIGITAL BRANDING',
+    date: 'APR 2026',
+    description: 'As part of our collaboration with OSCAR ACADEMY, M²RL TechnologieS provided social media setup and digital branding support for student Janani. Showcase her achievements, and encourage digital learning and personal growth.',
   },
   {
     id: 5,
     img: '/Achievements/OscarMoU.png',
-    title: 'Hack Night — 1st Place',
-    category: 'COMPETITION',
-    date: 'SEP 2023',
-    description: 'Teamed up with two strangers at 9pm and shipped a working accessibility checker by sunrise.',
+    title: 'MoU Signed with OSCAR ACADEMY for Student Digital Development',
+    category: 'CERTIFICATION',
+    date: 'OCT 2026',
+    description: 'M²RL TechnologieS signed a Memorandum of Understanding (MoU) with OSCAR ACADEMY to support student Janani through social media management and digital branding initiatives. This collaboration aims to enhance students professional online presence.',
   },
 ];
 
@@ -52,7 +52,7 @@ function Card({ title, category, date, description, img }) {
       <div className="textBox">
         <span className="category">{category}</span>
         <p className="text head">{title}</p>
-        <p className="description">{description}</p>
+        <p className="description ">{description}</p>
         <p className="text price">{date}</p>
       </div>
     </div>
@@ -71,11 +71,12 @@ export default function AchievementsComponent() {
         .font-cinzel  { font-family: 'Cinzel', serif; }
         .page {
           min-height: 100vh;
-          background: #1c1c1c;
+          background: #1c1c1c00;
           padding: 60px 24px;
           display: flex;
           flex-direction: column;
           align-items: center;
+          margin-bottom: 350px; 
         }
         .heading {
           color: white;
@@ -105,6 +106,9 @@ export default function AchievementsComponent() {
           }
         }
         @media (max-width: 600px) {
+          .page {
+            margin-bottom: 500px;
+          }
           .grid {
             grid-template-columns: 1fr;
           }
@@ -138,7 +142,7 @@ export default function AchievementsComponent() {
           align-items: center;
           justify-content: center;
           gap: 10px;
-          padding: 0 28px;
+          padding: 0px;
           transition: 0.2s ease-in-out;
           z-index: 2;
           text-align: center;
