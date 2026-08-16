@@ -6,9 +6,9 @@ import {
 import ClientMarquee from '../components/Collabration'
 
 const team = [
-    { name: 'Manickam', role: 'Family Member', desc: 'Supporting the vision and mission of M²RL.', img: '/employees/Manickam.png' },
-    { name: 'Megala', role: 'Family Member', desc: 'Supporting the vision and mission of M²RL.', img: '/employees/Megala.png' },
-    { name: 'Radha', role: 'Family Member', desc: 'Supporting the vision and mission of M²RL.', img: '/employees/Radha.png' },
+    { name: 'Manickam', role: 'Family Member', desc: 'Supporting the vision and mission of M²RL.', img: '/employees/Manickam.png', isFam: true },
+    { name: 'Megala', role: 'Family Member', desc: 'Supporting the vision and mission of M²RL.', img: '/employees/Megala.png', isFam: true },
+    { name: 'Radha', role: 'Family Member', desc: 'Supporting the vision and mission of M²RL.', img: '/employees/Radha.png', isFam: true },
     { name: 'Logesh', role: 'Founder', desc: "Visionary leading M²RL's sensor innovation journey.", img: '/employees/lokesh.png' },
     { name: 'Anbukumar', role: 'Website Developer', desc: 'Building the digital presence of M²RL.', img: '/employees/Anbu.png' },
     { name: 'Jayaseelan', role: 'CEO', desc: 'Steering business strategy and growth initiatives.', img: '/employees/Jayaseelan.png' },
@@ -16,6 +16,7 @@ const team = [
     { name: 'Kaviya', role: 'Design Support', desc: 'Leading product and communication design.', img: '/employees/Kaviya.png' },
     { name: 'Priyadharshini', role:'Human Resources', desc:'Managing recruitment, employee relations, and organizational development to build a strong and positive workplace culture.', img:"/employees/priyadharshini.png" },
     { name: 'Janani', role: 'Personal Advisor', desc: 'Providing personalized guidance and support to the leadership team.', img: '/employees/Janani.png' },
+    { name: 'Ashvini', role: "Lawyer", desc: 'Providing legal support and guidance to the organization.', img: '/employees/Ashvini.png' },
     { name: 'Prabhakar', role: 'Supporting', desc: 'Supporting core operations and project execution, ensuring smooth coordination and contributing to overall team efficiency.', img: '/employees/Prabhakar.png' },
     { name: 'Venuvignesh', role: 'CA', desc: 'Childhood friend & early supporter of M²RL TechnologieS, contributed ideas and planning support, CA license to be applied after 3 years.', img: '/employees/Venuvignesh.png' },
 ];
@@ -135,8 +136,8 @@ export default function AboutPage() {
                         <p className="section-subtitle">The passionate people behind M²RL TechnologieS</p>
                     </div>
                     <div className="grid-auto">
-                        {team.map(({ name, role, desc, img }) => (
-                            <div key={name} className="card" style={{ textAlign: 'center', padding: '36px 28px' }}>
+                        {team.map(({ name, role, desc, img, isFam = false }) => (
+                            <div key={name} className="card" style={{ textAlign: 'center', padding: '36px 28px', background: isFam ? 'linear-gradient(135deg, #dec016, #ffb604)' : 'white', boxShadow: '0 8px 28px rgba(231, 196, 0, 0.35)', border: "1px solid #1b3018" }}>
                                 <div style={{ width: 76, height: 76, borderRadius: '50%', background: 'linear-gradient(135deg,#1a6fff,#0052e6)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 18px', boxShadow: '0 8px 28px rgba(26,111,255,0.3)', border: '2px solid rgba(26,111,255,0.3)' }}>
                                     {img ? (
                                         <img src={img} alt={name} style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
